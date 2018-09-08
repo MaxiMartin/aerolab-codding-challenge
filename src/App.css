@@ -272,7 +272,7 @@ section.menu .row .next-button {
 */
 section.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(23%, 1fr));
+  grid-template-columns: auto auto auto auto;
   grid-gap: 24px;
 }
 
@@ -330,6 +330,11 @@ section.products div.card div.redeem-container .redeem-info .cost {
 }
 section.products div.card div.redeem-container .redeem-info .cost img {
   vertical-align: middle;
+  transform: rotate3d(0, 1, 0, 0deg);
+  transition: all 450ms ease-in-out;
+}
+section.products div.card div.redeem-container:hover .redeem-info .cost img {
+  transform: rotate3d(0, 1, 0, -360deg);
 }
 section.products div.card div.redeem-container .redeem-info .button {
   background-color: #ffffff;
@@ -403,9 +408,7 @@ section.products div.card .info .name {
 
 @media only screen  and (max-width : 1224px) {
   section.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
-    grid-gap: 24px;
+    grid-template-columns: auto auto;
   }  
   section.products div.card {
     position: relative;
@@ -449,7 +452,9 @@ section.products div.card .info .name {
 }
 
 @media only screen  and (max-width : 860px) {
-
+  section.products {
+    grid-template-columns: auto;
+  }  
 }
 
 /*

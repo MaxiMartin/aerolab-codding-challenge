@@ -113,7 +113,6 @@ class App extends React.Component {
                 },
                 {
                     label: 'No',
-                    onClick: () => console.log('Redeem Canceled')
                 }
             ]
         })
