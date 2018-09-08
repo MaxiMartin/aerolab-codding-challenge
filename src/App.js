@@ -112,7 +112,7 @@ class App extends React.Component {
                     onClick: () => this.fetchRedeem(data)
                 },
                 {
-                    label: 'No',
+                    label: 'No'
                 }
             ]
         })
@@ -183,12 +183,14 @@ class App extends React.Component {
         this.fetchProducts();
         global.document.addEventListener('click', this.handleClick, false);
         window.addEventListener('resize', this.updateWindowDimensions);
+        window.addEventListener('load', this.updateWindowDimensions);
         document.title = "Aerolab codding challenge";
     }
 
     componentWillUnmount() {
         global.document.removeEventListener('click', this.handleClick, false);
         window.removeEventListener('resize', this.updateWindowDimensions);
+        window.addEventListener('load', this.updateWindowDimensions);
     }
 
     render() {
@@ -206,7 +208,6 @@ class App extends React.Component {
                     pages={this.state.pages}
                     productsPerPage={this.state.productsPerPage}
                     products={this.state.products}
-
                     updateView={this.updateView}
                     updatePage={this.updatePage}
                 />
@@ -218,14 +219,12 @@ class App extends React.Component {
                     endItem={this.state.endItem}
                     products={this.state.products}
                     user={this.state.user}
-
                     redeemProductNow={this.redeemProductNow}
                 />
 
                 <Footer
                     page={currentPage}
                     pages={this.state.pages}
-
                     updatePage={this.updatePage}
                 />
             </main>

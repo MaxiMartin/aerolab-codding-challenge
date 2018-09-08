@@ -250,20 +250,27 @@ section.menu .row .next-button {
     text-align: right;
     width: 50%;
     font-size: 16px;
-    line-height: 32px;
+    line-height: 16px;
   }
   section.menu .row .vertical-divider {
     display: none;
   }
   section.menu .row button {
-    font-size: 16px;
+    float: left;
+    font-size: 13px;
     line-height: 32px;
+    margin-right: 2%;
     margin-left: 0;
     margin-bottom: 8px;
-    width: 100%;
+    padding: 0;
+    width: 32%;
+  }
+  section.menu .row button:last-of-type {
+    margin-right: 0;
+    
   }
   section.menu .row .next-button {
-    float: right;
+    
   }
 }
 
@@ -272,7 +279,7 @@ section.menu .row .next-button {
 */
 section.products {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 24px;
 }
 
@@ -408,7 +415,7 @@ section.products div.card .info .name {
 
 @media only screen  and (max-width : 1224px) {
   section.products {
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
   }  
   section.products div.card {
     position: relative;
@@ -453,7 +460,7 @@ section.products div.card .info .name {
 
 @media only screen  and (max-width : 860px) {
   section.products {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }  
 }
 
@@ -503,4 +510,13 @@ section.footer .row .prev-button {
 }
 section.footer .row .next-button {
   background-image: url(./assets/arrow-right.svg);
+}
+
+/*
+*   COMFIRM ALERT BODY
+*/
+@media only screen  and (max-width : 440px) {
+  .react-confirm-alert-body {
+    max-width: calc(100vw - 40px);
+  }
 }
