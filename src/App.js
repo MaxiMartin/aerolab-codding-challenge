@@ -226,6 +226,7 @@ class App extends React.Component {
                     page={currentPage}
                     pages={this.state.pages}
                     updatePage={this.updatePage}
+                    API={API}
                 />
             </main>
         );
