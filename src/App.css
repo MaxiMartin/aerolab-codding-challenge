@@ -299,6 +299,9 @@ section.products div.card.available:hover {
 }
 section.products div.card div.image-container {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 182px;
   text-align: center;
 }
@@ -307,10 +310,7 @@ section.products div.card div.loader img{
   width: 48px;
 }
 section.products div.card div.image-container img {
-  position: absolute;
   height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
 }
 section.products div.card div.redeem-container {
   display: none;
@@ -321,7 +321,7 @@ section.products div.card div.redeem-container {
   bottom: 0;
   transition: all 200ms ease-in-out;
 }
-section.products div.card div.redeem-container .redeem-info{
+section.products div.card div.redeem-container .redeem-info {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -460,6 +460,12 @@ section.products div.card .info .name {
   section.products {
     grid-template-columns: 1fr;
   }  
+  section.products div.card div.image-container img {
+    align-self: middle;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+  }
 }
 
 /*
