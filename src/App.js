@@ -32,16 +32,7 @@ class App extends React.Component {
             pages: []
         };
 
-        this.onClick = this.onClick.bind(this);
-        this.Paginate = this.Paginate.bind(this);
-        this.handleClick = this.handleClick.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    }
-
-    handleClick = (event) => {
-        if (event.target.className.includes('pepe') &&
-            this.state.activeSelected !== ''
-        ) this.setState({ activeSelected: '' });
     }
 
     pageNumbers = (json) => {
@@ -50,18 +41,6 @@ class App extends React.Component {
             pageNumbers.push(i);
         }
         return pageNumbers;
-    }
-
-    onClick = () => {
-        this.componentDidMount();
-    }
-
-    Paginate = (i) => {
-        currentPage = i;
-        this.setState({
-            startItem: currentPage > 1 ? currentPage * this.state.productsPerPage - this.state.productsPerPage : 0,
-            endItem: this.state.productsPerPage * i
-        });
     }
 
     updatePage = (args) => {
@@ -171,10 +150,8 @@ class App extends React.Component {
         }).then(response => {
             return response.json()
         }).then(json => {
-            if (json.message === 'You\'ve redeem the product successfully') {
-                this.fetchUser();
-                this.fetchProducts();
-            }
+            this.fetchUser();
+            this.fetchProducts();
         })
     }
 

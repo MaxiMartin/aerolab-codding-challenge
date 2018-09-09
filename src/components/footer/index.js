@@ -40,7 +40,6 @@ class Footer extends React.Component {
     }
 
     isActive = (args, page, pages) => {
-        console.log(pages)
         if (pages === 1) { return false }
         if (args === 'prev' && page !== 1) { return 'prev-button active' }
         if (args === 'prev' && page === 1) { return 'prev-button' }
